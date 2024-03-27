@@ -1,0 +1,19 @@
+header{
+    border: 1px solid red;
+    height: 152px;
+}
+section {
+    border: 1px solid purple;
+    height: 340px;
+    background-color: purple;
+}
+main {
+    border: 1px solid blue;
+    height: auto;
+    background-color: blue;
+}
+footer {
+    border: 1px solid #009145; /* Hexadecimal color code*/
+    min-height: 368px; /* su tamaño es 368, pero si su contenido es mas grande el footer crece*/
+    background-color: #009145;
+}
