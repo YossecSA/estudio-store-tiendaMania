@@ -35,7 +35,8 @@ footer {
 .product-card{
     background-color: #f0f0f0;
     border-radius: 14px;
-    max-width: 25%;
+    /* max-width: 25%; */
+    max-width: 300px;
     overflow: hidden;
 }
 .product-img{
@@ -84,3 +85,9 @@ footer {
     font-weight: 700;
     color: #428f13;
 }
+.product-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+}  
