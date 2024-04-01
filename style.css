@@ -55,9 +55,6 @@ footer {
     padding: 20px;
     box-sizing: border-box;
 
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }
 .product-title{
     font-size: 22px;
@@ -70,6 +67,9 @@ footer {
     font-weight: 400;
     font-size: 14px;
     color: #1c1c1cbc;
+
+    display: block;
+    margin-bottom: 14px;
 }
 .product-tax-policy{
     font-size: 14px;
@@ -113,4 +113,14 @@ footer {
 .title-container span:last-child{
     font-size: 100px;
     line-height: 80px;
+}
+/*media query*/
+@media screen and (max-width: 758px) {
+    .container{
+        width: auto;
+        padding: 2rem;
+    }
+    .product-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
