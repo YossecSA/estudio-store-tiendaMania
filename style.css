@@ -92,7 +92,6 @@ footer {
     gap: 20px;
 }
 #hero{
-    background-color: red;
     background: url('assets/hero_bg.png');
     background-size: cover;
     background-position: top center;
@@ -114,13 +113,37 @@ footer {
     font-size: 100px;
     line-height: 80px;
 }
-/*media query*/
-@media screen and (max-width: 758px) {
+
+@media screen and (max-width: 1240px) {
     .container{
         width: auto;
         padding: 2rem;
     }
     .product-container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #hero{
+        height: auto;
+    }
+    .title-container span:first-child{
+        font-size: 28px;
+    }
+    .title-container span:last-child{
+        font-size: 50px;
+    }
+}
+/*media query*/
+@media screen and (max-width: 758px) {
+
+    .product-container{
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .title-container span:first-child{
+        font-size: 28px;
+    }
+    .title-container span:last-child{
+        font-size: 50px;
+    }
+
 }

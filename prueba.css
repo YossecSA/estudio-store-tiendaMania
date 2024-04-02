@@ -1,0 +1,28 @@
+div{
+    width: 250px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+div:first-child{
+    background-color: aqua;
+}
+div:last-child{
+    background-color: red;
+}
+
+div:nth-child(3){ /*solo cambiamos el valor por la posicion*/
+    background-color: green;
+}
+
+div:nth-child(3n){ /* selecciona en intervalos */
+    background-color: blue;
+}
+div:nth-last-child(2){ /* comienza desde el ultimo elemento - acepta tambien intervalos*/
+    background-color: yellow;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
