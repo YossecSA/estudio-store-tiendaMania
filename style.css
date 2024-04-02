@@ -11,10 +11,11 @@ html {
 header{
     border: 1px solid red;
     height: 152px;
+    background-color: #ff3b3c;
 }
 section {
     border: 1px solid purple;
-    height: 340px;
+    height: 200px;
 }
 main {
     border: 1px solid blue;
@@ -32,6 +33,55 @@ footer {
     height: inherit;
     min-height: inherit;
 }
+
+.search{
+    flex: 1;
+    height: 75%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    align-content: center;
+}
+.search .form {
+    box-sizing: border-box;
+    /*display: flex;
+    justify-content: center; */
+}
+.search .form input {
+    border-radius: 14px;
+    border: none;
+    width: 100%;
+    /* width: 505px; */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.social ul{
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+}
+.search .social ul li {
+    padding: 0 10px;
+}
+.container .nav {
+    height: 25%;
+}
+.container .nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+.container .nav ul li a {
+    color: white;
+    font-weight: 700;
+    text-align: left;
+    text-decoration: none;
+}
+.nav ul li a:hover {
+    text-decoration: underline;
+}
+
 .product-card{
     background-color: #f0f0f0;
     border-radius: 14px;
@@ -88,6 +138,7 @@ footer {
 }
 .product-container{
     display: grid;
+    padding: 2rem 0;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
