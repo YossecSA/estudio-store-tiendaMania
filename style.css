@@ -9,27 +9,27 @@ html {
 }
 
 header{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 152px;
     background-color: #ff3b3c;
 }
 section {
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     height: 200px;
 }
 main {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: auto;
 }
 footer {
-    border: 1px solid #009145; /* Hexadecimal color code*/
-    min-height: 368px; /* su tamaño es 368, pero si su contenido es mas grande el footer crece*/
+    /* border: 1px solid #009145; Hexadecimal color code*/
+    min-height: 250px; /* su tamaño es 368, pero si su contenido es mas grande el footer crece*/
 }
 
 .container {
     width: 1220px;
     margin: 0 auto;
-    border: 1px solid springgreen;
+    /* border: 1px solid springgreen; */
     height: inherit;
     min-height: inherit;
 }
@@ -85,13 +85,18 @@ footer {
 .nav ul li a:hover {
     text-decoration: underline;
 }
-
 .product-card{
-    background-color: #f0f0f0;
+    background-color: #f0f0f0;;
     border-radius: 14px;
     /* max-width: 25%; */
     width:auto;
     overflow: hidden;
+    transition: 0.2s ease-in-out;
+}
+.product-card:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translate3d(20px);
 }
 .product-img{
     width: 100%;
@@ -169,6 +174,51 @@ footer {
     font-size: 100px;
     line-height: 80px;
 }
+/*footer*/
+footer{
+    background-color: #7525A7;
+}
+footer .container{
+    display: flex;
+    flex-direction: column;
+}
+.columns-container{
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+}
+.columns-container .col ul {
+    list-style-type: none;
+    height: 9rem;
+    
+    margin-top: 1rem;
+}
+.columns-container .col ul li {
+    padding: 5px 0;
+}
+.col-main-item{
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.columns-container .col ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+
+
+.columns-container .col ul li a:hover{
+    text-decoration: underline;
+}
+.copyright {
+    border-top: 1px solid #ba53fb;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding: 30px 0;
+    box-sizing: border-box;
+}
 /*media query*/
 
 @media screen and (max-width: 1240px) {
@@ -189,9 +239,7 @@ footer {
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     /* Estilos para tablets */
-    .container{
-        background-color: #009145;
-    }
+
 }
 
 @media screen and (max-width: 758px) {
@@ -232,16 +280,22 @@ footer {
     } */
     .container .nav ul {
         display: flex;
-        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
         justify-content: center;
-        padding: 20px;
-        background-color: rgb(201, 56, 56);
+        padding: 10px;
     }
+
     #hero{
         height: 200px;
     }
     .product-container{
         grid-template-columns: repeat(1, 1fr);
         padding: 2rem;
+    }
+    .columns-container{
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: start;
+        padding-left: 2rem;
     }
 }
