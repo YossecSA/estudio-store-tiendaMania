@@ -90,29 +90,37 @@ a{
     text-decoration: underline;
 }
 
-#hero{
-    background-color: red;
-    background: url('assets/hero_bg.png');
-    background-size: cover;
-    background-position: top center;
+/* section de detalles*/
+main .container{
+    padding: 2rem 0;
 }
-#hero .container{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+.main .columns-container{
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 20px;
+
 }
-.title-container span{
-    display: block;
-    color: white;
-    font-weight: 700;
+
+.product-images-block, .product-description-block, .product-checkout-block {
+    flex: 1;
 }
-.title-container span:first-child{
-    font-size: 40px;
+.product-images-block{
+    background-color: #ba53fb;
 }
-.title-container span:last-child{
-    font-size: 100px;
-    line-height: 80px;
+.product-description-block .title {
+    color: #333; /* Elige un color adecuado */
+    font-size: 24px; /* Ajusta el tamaño según sea necesario */
+    font-weight: bold;
+    margin-top: 0;
+    word-wrap: break-word;
 }
+.product-checkout-block{
+    background-color: #7525A7;
+}
+
+
 /*footer*/
 footer{
     background-color: #7525A7;
@@ -121,12 +129,14 @@ footer .container{
     display: flex;
     flex-direction: column;
 }
-.columns-container{
+footer .columns-container{
     flex: 1;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     justify-items: center;
 }
+
+/*footer*/
 .columns-container .col ul {
     list-style-type: none;
     height: 9rem;
@@ -163,12 +173,6 @@ footer .container{
 @media screen and (max-width: 1240px) {
     .container{
         width: auto;
-    }
-    .title-container span:first-child{
-        font-size: 28px;
-    }
-    .title-container span:last-child{
-        font-size: 50px;
     }
 }
 
@@ -221,9 +225,6 @@ footer .container{
         padding: 10px;
     }
 
-    #hero{
-        height: 200px;
-    }
     .columns-container{
         grid-template-columns: repeat(2, 1fr);
         justify-items: start;
