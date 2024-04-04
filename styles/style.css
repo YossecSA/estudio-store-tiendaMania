@@ -25,7 +25,11 @@ footer {
     /* border: 1px solid #009145; Hexadecimal color code*/
     min-height: 250px; /* su tamaño es 368, pero si su contenido es mas grande el footer crece*/
 }
-
+a{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
 .container {
     width: 1220px;
     margin: 0 auto;
@@ -153,7 +157,7 @@ footer {
 }
 #hero{
     background-color: red;
-    background: url('assets/hero_bg.png');
+    background: url('/assets/hero_bg.png');
     background-size: cover;
     background-position: top center;
 }
