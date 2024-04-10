@@ -157,7 +157,7 @@ a{
 }
 #hero{
     background-color: red;
-    background: url('./assets/hero_bg.png');
+    background: url('../assets/hero_bg.png');
     background-size: cover;
     background-position: top center;
 }
