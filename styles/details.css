@@ -345,7 +345,7 @@ footer .columns-container{
 @media screen and (max-width: 1240px) {
     .container{
         width: auto;
-        background-color: #428f13;
+        /* background-color: #428f13; */
     }
 
     .product-checkout-block{
