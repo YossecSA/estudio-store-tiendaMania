@@ -3,7 +3,7 @@
 const footerSelector = document.querySelector("footer .container .columns-container");
 
 const options_footer = [
-    { title: 'Ofertas', linkTo: '', opts: ["Laptops", "Audio", "Auticulares"] },
+    { title: 'Ofertas', linkTo: '', opts: ["Laptops", "Audio", "Auriculares", "microfono"] },
     { title: 'Como comprar', linkTo: '', opts: ["Formas de pago", "Envios", "Devoluciones"] },
     { title: 'Costos y tarifas', linkTo: '', opts: ["Impuestos", "Facturación"] },
     { title: 'Mis pedidos', linkTo: '', opts: ["Pedir nuevamente", "Lista de deseos"] },
