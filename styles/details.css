@@ -120,6 +120,10 @@ a{
     object-fit: contain; 
     object-position: center center; 
 }
+.thumbnail-container:hover{
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
 .product-images-block .main-image{
     width: 100%;
     grid-row: 1/5;

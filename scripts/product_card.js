@@ -13,7 +13,7 @@ class Product {
 
 const products = [
     new Product(
-        "A120","Macbook Pro 15'4", "$1999", "Portátil Apple con pantalla Retina de 15.4 pulgadas", 
+        "A120","Macbook Pro 151'4", "$1999", "Portátil Apple con pantalla Retina de 15.4 pulgadas", 
         "https://cdn.lifeofpix.com/368492/_w1800/368505/lifeofpix-368492368505.webp", "Macbook Pro", "10% de descuento", "Incluye impuestos"),
 
     new Product(
