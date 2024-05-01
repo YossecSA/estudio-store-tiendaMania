@@ -64,7 +64,7 @@ function printDetails(id) {
         <form class="selector">
             <label class="label subtitle" >Color</label>
             <fieldset>
-                <select type="text" placeholder="Selecciona un color">
+                <select type="text" placeholder="Selecciona un color" id="color">
                     ${product.colors.map(
                     (each) => `<option value=${each}>${each}</option>`
                     ).join("")}
@@ -104,8 +104,8 @@ function printDetails(id) {
             </ul>
             <div class="checkout-process">
                 <div class="top">
-                <input type="number" value="1" min="0"  onchange="changeSubtotal(this.value)"/>
-                <button class="btn-primary">Comprar</button>
+                <input type="number" value="1" min="0"  onchange="changeSubtotal(this.value)" id="quantity"/>
+                <button class="btn-primary" id="btn_agregar">Añadir</button>
                 </div>
             </div>
         </div>
@@ -140,3 +140,32 @@ function changeSubtotal(quantity) {
 
 
 printDetails(id)
+
+// Obtener el botón por su ID
+var button_agregar = document.getElementById("btn_agregar");
+
+// Añadir un evento de clic al botón
+button_agregar.addEventListener("click", function() {
+    saveProduct(id);
+});
+
+function saveProduct(id) {
+    const found = products.find((each) => each.id === id);
+
+    // Crear un objeto con los detalles del producto
+    const product = {
+        id: found.id,
+        title: found.title,
+        price: found.price,
+        color: document.querySelector("#color").value,
+        quantity: document.querySelector("#quantity").value,
+    };
+
+    // Para la primera vez se necesita indicar q si no existe q sea un array vacio
+    let cart = JSON.parse(localStorage.getItem("cart")) || []; 
+
+    cart.push(product);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+}
