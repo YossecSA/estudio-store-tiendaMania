@@ -53,7 +53,7 @@ buySelector.addEventListener("click", finalizePurchase);
 
 function finalizePurchase() {
     Swal.fire({
-        title: "¿Estás seguro?",
+        title: "¿Estás seguro de tu compra?",
         text: "¡No podrás revertir esto!",
         icon: "warning",
         showCancelButton: true,
