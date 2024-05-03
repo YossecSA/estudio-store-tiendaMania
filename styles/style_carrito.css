@@ -1,3 +1,11 @@
+/* diseño principal tarjeta-producto */
+main{
+    flex: 1;
+    min-height: calc(90vh - 100px); 
+}
+.container{
+    padding-bottom: 2rem;
+}
 .product-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -7,7 +15,7 @@
 .product-card{
     background-color: #f0f0f0;
     border-radius: 14px;
-    width: auto;
+    width: 710px;
     
 }
 .product-card a{
@@ -42,7 +50,7 @@
     word-wrap: break-word;
     display: block;
     line-height: 22px;
-    font-size: 22px;
+    font-size: 20px;
 }
 .product-price-block {
     display: flex;
@@ -51,7 +59,7 @@
     align-items: center;
 }
 .product-price-block .price {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
     color: black;
     flex: 1;
@@ -59,11 +67,70 @@
 
 .product-img img{
     width: 200px;
-    height: 200px;
+    height: 150px;
     object-fit: cover;
     padding: 10px;
     border-radius: 20px;
 }
-footer .container{
-    position: relative;
+
+/*fin diseño de productos */
+
+/* diseño de resumen pedido */
+.cart-resumen{
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    border-radius: 14px;
+    width: 400px;
+    
+}
+.container-resumen-cart{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.cart-title{
+    line-height: 22px;
+    font-size: 22px;
+    text-align: center;
+}
+.container-cart-price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 25px 0px;
+}
+.container-cart-price .cart-price{
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 17px;
+}
+.container-cart-policy{
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #1c1c1cbc;
+}
+.container-buton{
+    display: flex;
+    justify-content: center;
+    padding: 0px 10px;
+}
+.container-buton button{
+    background-color: #ff3b3c;
+    border: 1px solid red;
+    color: white;
+    width: 80%;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 15px;
+    align-items: center;
+    font-weight: 500;
+    line-height: 15px;
+}
+/* diseño de resumen pedido */
+footer{
+    margin-top: auto;
+    color: #333; /* Color del texto del footer */
 }
