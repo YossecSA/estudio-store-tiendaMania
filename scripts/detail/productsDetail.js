@@ -147,6 +147,10 @@ var button_agregar = document.getElementById("btn_agregar");
 // Añadir un evento de clic al botón
 button_agregar.addEventListener("click", function() {
     saveProduct(id);
+    Swal.fire({
+        text: "Tu producto se agrego al carrito!",
+        icon: "success"
+    });
 });
 
 function saveProduct(id) {
