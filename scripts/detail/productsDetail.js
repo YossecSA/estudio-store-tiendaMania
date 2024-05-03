@@ -14,30 +14,30 @@ class Product {
 
 const products = [
     new Product(
-        "A120","Macbook Pro 15'4", "$1999", "Portátil Apple con pantalla Retina de 15.4 pulgadas"
+        "A120","Macbook Pro 15'4", "1999", "Portátil Apple con pantalla Retina de 15.4 pulgadas"
         , "Macbook Pro", "10% de descuento", "Incluye impuestos",["Negro", "Azul Marino", "Guinda"], 
         ["https://cdn.lifeofpix.com/368492/_w1800/368505/lifeofpix-368492368505.webp", "./assets/mock2.jpg"]),
 
     new Product(
-        "A121","iPhone 13", "$1099", "iPhone 13 de 128GB en color azul", 
+        "A121","iPhone 13", "1099", "iPhone 13 de 128GB en color azul", 
         "iPhone 13", "5% de descuento", "Incluye impuestos",["Rojo", "Gris", "Plateado"], 
         ["https://as2.ftcdn.net/v2/jpg/03/15/35/87/1000_F_315358716_iszRIy0AZqy5TNvPWIOFzMLDlil0Wt95.jpg", "./assets/mock2.jpg"]),
 
     new Product(
-        "A122","Samsung Galaxy S22", "$899", "Samsung Galaxy S22 con pantalla Dynamic AMOLED 2X de 6.6 pulgadas", "Samsung Galaxy S22", "15% de descuento", "Incluye impuestos"
+        "A122","Samsung Galaxy S22", "899", "Samsung Galaxy S22 con pantalla Dynamic AMOLED 2X de 6.6 pulgadas", "Samsung Galaxy S22", "15% de descuento", "Incluye impuestos"
         ,["Rojo", "Gris", "Plateado"], ["https://cdn.lifeofpix.com/113763/_w1800/308028/lifeofpix-rawpixelcom1624-308028.webp",
         "https://cdn.lifeofpix.com/113763/_w1800/307997/lifeofpix-rawpixelcom1624-307997.webp"]),
 
     new Product(
-        "A123","Canon EOS R6", "$2499", "Cámara mirrorless Canon EOS R6 con sensor CMOS de 20.1 megapíxeles", 
+        "A123","Canon EOS R6", "2499", "Cámara mirrorless Canon EOS R6 con sensor CMOS de 20.1 megapíxeles", 
         "Canon EOS R6", "8% de descuento", "Incluye impuestos",["Rojo", "Gris", "Plateado"],  ["./assets/mock1.jpg", "./assets/mock2.jpg"]),
 
     new Product(
-        "A124","Xbox Series X", "$499", "Consola Xbox Series X con capacidad de 1TB", 
+        "A124","Xbox Series X", "499", "Consola Xbox Series X con capacidad de 1TB", 
         "Xbox Series X", "No hay descuento", "Incluye impuestos",["Rojo", "Gris", "Plateado"],  ["./assets/mock1.jpg", "./assets/mock2.jpg"]),
 
     new Product(
-        "A125", "Nintendo Switch", "$299", "Consola Nintendo Switch con controles Joy-Con", 
+        "A125", "Nintendo Switch", "299", "Consola Nintendo Switch con controles Joy-Con", 
         "Nintendo Switch", "20% de descuento", "Incluye impuestos",["Rojo", "Gris", "Plateado"],  ["https://cdn.lifeofpix.com/350304/_w1800/365043/lifeofpix-noahbietrix-365043.webp", "https://cdn.lifeofpix.com/298717/_w1800/310907/lifeofpix-nicoletarazi-310907.webp"])
 ];
 
@@ -119,6 +119,7 @@ function cambioImagen(nuevaImagen) {
     const bigImg = document.getElementById('bigImg');
     bigImg.src = nuevaImagen;
 }
+
 // Función para cambiar el subtotal según la cantidad seleccionada
 function changeSubtotal(quantity) {
 
@@ -132,7 +133,6 @@ function changeSubtotal(quantity) {
     const product = products.find((each) => each.id === id);
 
     const subtotal = quantity * parseFloat(product.precio.replace('$', '').replace(',', ''));
-
     const subtotalElement = document.getElementById('subtotal');
 
     subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
@@ -151,21 +151,24 @@ button_agregar.addEventListener("click", function() {
 
 function saveProduct(id) {
     const found = products.find((each) => each.id === id);
+    
+    // Elimina el símbolo de dólar y convierte el subtotal a un número
+    const subtotal_product = parseFloat(document.getElementById('subtotal').textContent.replace('$', ''));
+    const precio_value = parseFloat(found.precio);
 
-    // Crear un objeto con los detalles del producto
     const product = {
         id: found.id,
-        title: found.title,
-        price: found.price,
+        title: found.nombre,
+        price: precio_value,
+        img: found.images[0],
         color: document.querySelector("#color").value,
         quantity: document.querySelector("#quantity").value,
+        subtotal: subtotal_product 
     };
 
-    // Para la primera vez se necesita indicar q si no existe q sea un array vacio
     let cart = JSON.parse(localStorage.getItem("cart")) || []; 
 
     cart.push(product);
 
     localStorage.setItem("cart", JSON.stringify(cart));
-
 }
