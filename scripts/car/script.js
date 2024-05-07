@@ -40,9 +40,12 @@ function changeQuantity(event) {
 
         // Actualizar los productos guardados en localStorage
         localStorage.setItem("cart", JSON.stringify(cart));
-
+        event.target.value = newQuantity;
+        const productPriceBlock = event.target.parentElement.nextElementSibling.querySelector('.price');
+        productPriceBlock.textContent = `$${cart[productIndex].subtotal.toFixed(2)}`;
         // Recalcular y actualizar el total a pagar
         updateTotal();
+
     }
 }
 
