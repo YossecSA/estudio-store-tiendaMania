@@ -24,36 +24,26 @@ for (const producto of productos) {
     `;
 }
 
-// Función para cambiar la cantidad de un producto en el carrito
 function changeQuantity(event) {
     const productId = event.target.id;
     const newQuantity = parseInt(event.target.value);
-
-    // Buscar el producto en el carrito
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const productIndex = cart.findIndex(product => product.id === productId);
 
     if (productIndex !== -1) {
-        // Modificar la cantidad del producto
         cart[productIndex].quantity = newQuantity;
         cart[productIndex].subtotal = cart[productIndex].price * newQuantity;
 
-        // Actualizar los productos guardados en localStorage
         localStorage.setItem("cart", JSON.stringify(cart));
         event.target.value = newQuantity;
         const productPriceBlock = event.target.parentElement.nextElementSibling.querySelector('.price');
         productPriceBlock.textContent = `$${cart[productIndex].subtotal.toFixed(2)}`;
-        // Recalcular y actualizar el total a pagar
         updateTotal();
-
     }
 }
-
 updateTotal();
-
 const buySelector = document.getElementById("buy-button");
 buySelector.addEventListener("click", finalizePurchase);
-
 function finalizePurchase() {
     Swal.fire({
         title: "¿Estás seguro de tu compra?",
@@ -64,8 +54,7 @@ function finalizePurchase() {
         cancelButtonColor: "#d33",
         confirmButtonText: "Sí, comprar"
     }).then((result) => {
-        if (result.isConfirmed) {
-            // Eliminar el carrito y mostrar el mensaje de éxito si el usuario confirma
+        if (result.isConfirmed) { 
             const cartproducts = [];
             localStorage.removeItem("cart");
             updateCartView();
